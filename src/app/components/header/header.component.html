@@ -1,0 +1,33 @@
+<mat-toolbar>
+    <div class="logo" fxFlex='20'>
+        <h1 (click)="home()">HT.</h1>
+    </div>
+    <div class="header" fxFlex='100' fxShow="true" fxHide.lt-md="true" fxLayoutAlign="center center">
+        <div class="menu" fxFlex='97' fxFlexFill fxLayoutGap="20px">
+            <a (click)="toHome()">Home</a>
+            <a (click)="toAbout()">About</a>
+            <a (click)="toContact()">Contact</a>
+            <a (click)="toTutorLogin()">Login as Tutor</a>
+            <a (click)="toTutorSignup()">Signup as Tutor</a>
+        </div>
+    </div>
+    <div class="menuButton" fxShow="true" fxHide.gt-sm="true">
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </div>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav fxHide.gt-sm="true" #sidenav fxLayout="column" fxLayoutAlign="center center" mode="over"
+        opened="false">
+        <div fxLayout="column" class="menuCol" fxLayoutAlign="center center" fxLayoutGap="20px">
+            <a (click)="toHome()">Home</a>
+            <a (click)="toAbout()">About</a>
+            <a (click)="toContact()">Contact</a>
+            <a (click)="toTutorLogin()">Login as Tutor</a>
+            <a (click)="toTutorSignup()">Signup as Tutor</a>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

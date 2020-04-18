@@ -6,6 +6,10 @@ import { StudentLoginComponent } from './components/login-page/student-login/stu
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { StudentSignupComponent } from './components/signup-page/student-signup/student-signup.component';
 import { TutorSignupComponent } from './components/signup-page/tutor-signup/tutor-signup.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -14,10 +18,14 @@ import { TutorSignupComponent } from './components/signup-page/tutor-signup/tuto
     StudentLoginComponent,
     HomePageComponent,
     StudentSignupComponent,
-    TutorSignupComponent
+    TutorSignupComponent,
+    HeaderComponent,
+    FooterComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

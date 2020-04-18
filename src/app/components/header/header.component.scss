@@ -1,0 +1,69 @@
+$bluishColot: rgb(57, 212, 223);
+$fontType1: "Overpass", Sans-serif;
+
+mat-toolbar {
+    background-color: #181818;
+    color: white;
+    font-family: $fontType1;
+    letter-spacing: 1px;
+    .header {
+        align-items: center;
+        justify-content: space-between !important;
+        .menu {
+            text-align: right;
+            align-items: flex-end;
+            a {
+                color: white;
+                font-size: 13px !important;
+                padding: 8px 8px;
+                cursor: pointer;
+                border: 2px solid $bluishColot !important;
+            }
+        }
+    }
+}
+button {
+    outline: none;
+}
+.logo {
+    text-align: center;
+    h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 48px !important;
+        margin-top: 5px;
+        color: $bluishColot;
+        cursor: pointer;
+    }
+}
+.menuButton {
+    width: 90%;
+    text-align: right;
+    mat-icon {
+        align-items: right;
+        cursor: pointer;
+        font-size: 40px;
+        margin-right: 20px;
+    }
+}
+
+mat-sidenav-container {
+    height: 90vh;
+    mat-sidenav {
+        width: 240px !important;
+        background-color: rgba(0, 0, 0, 0.692);
+        color: white !important;
+        .menuCol {
+            margin-top: 25px;
+            .closeIcon {
+                text-align: right;
+            }
+            a {
+                color: white;
+                font-size: 13px !important;
+                padding: 8px;
+                border: 2px solid $bluishColot !important;
+                cursor: pointer;
+            }
+        }
+    }
+}
