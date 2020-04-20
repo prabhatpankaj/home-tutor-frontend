@@ -6,6 +6,7 @@ mat-toolbar {
     color: white;
     font-family: $fontType1;
     letter-spacing: 1px;
+    height: 60px;
     .header {
         align-items: center;
         justify-content: space-between !important;
@@ -47,7 +48,7 @@ button {
 }
 
 mat-sidenav-container {
-    height: 90vh;
+    height: 597px;
     mat-sidenav {
         width: 240px !important;
         background-color: rgba(0, 0, 0, 0.692);

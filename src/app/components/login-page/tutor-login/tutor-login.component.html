@@ -1,1 +1,41 @@
-<p>tutor-login works!</p>
+<body class="detailPage" fxLayoutAlign="center center">
+    <div class="LoginFPStyles" fxLayoutAlign="center center" fxLayout='column'>
+        <h1>Login</h1>
+        <form [formGroup]="form" class="UserDataFields " fxLayout="column">
+
+            <mat-form-field appearance="outline">
+                <mat-icon>mail</mat-icon>
+                <input matInput type="email" formControlName="email" [(ngModel)]="tutorlogin.email" name="email"
+                    placeholder="Email">
+                <mat-error *ngIf="form.get('email').hasError('required')">
+                    Email is mandatory.
+                </mat-error>
+                <mat-error *ngIf="form.get('email').hasError('email')">
+                    Incorrect Email.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-icon>vpn_key</mat-icon>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
+                    [(ngModel)]="tutorlogin.password" name="password" placeholder="Password">
+                <mat-error *ngIf="form.get('password').hasError('required')">
+                    Password is mandatory.
+                </mat-error>
+                <mat-error *ngIf="form.get('password').hasError('minlength')">
+                    Password with less than 5 characters.
+                </mat-error>
+
+            </mat-form-field>
+
+            <button mat-raised-button class="signupButton" (click)="loginAsTutor()">
+                Login as Tutor</button>
+            <button mat-raised-button class="signupButton2nd" (click)="loginAsStudent()">
+                Login as Student</button>
+            <div class="bottomDetail">
+                <p>Don't have an account?</p>
+                <a (click)='createAccount()'> Signup</a>
+            </div>
+        </form>
+    </div>
+
+</body>

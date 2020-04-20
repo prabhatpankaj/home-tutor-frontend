@@ -10,6 +10,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  AuthGuardService as AuthGuard
+} from './components/service/guards/authGuard';
+import { ErrorInterceptor } from './_helper/error.interceptors';
+import { JwtInterceptor } from './_helper/jwt.interceptor';
+import { TutorprofileComponent } from './components/tutorprofile/tutorprofile.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +29,19 @@ import { ContactComponent } from './components/contact/contact.component';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    TutorprofileComponent
   ],
   imports: [
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  
+   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
